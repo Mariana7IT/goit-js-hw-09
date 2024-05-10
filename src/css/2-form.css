@@ -45,4 +45,8 @@
   border-radius: 4px;
 }
 
-
+html {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
