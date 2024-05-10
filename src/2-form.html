@@ -1,32 +1,26 @@
-const formData = { email: '', message: '' };
-
-const form = document.querySelector('.feedback-form');
-form.addEventListener('input', handleInput);
-form.addEventListener('submit', sendData);
-returnInput();
-
-function handleInput(event) {
-    const key = event.target.name;
-    formData[key] = event.target.value;
-    localStorage.setItem('feedback - form - state', JSON.stringify(formData));
-}
-function returnInput() {
-    const data = JSON.parse(localStorage.getItem('feedback - form - state'));
-    if (!data) {
-    return;
-}
-    const { email, message } = form.elements;
-    email.value = data.email;
-    message.value = data.message;
-}
-
-function sendData(event) {
-    event.preventDefault();
-    const { email, message } = form.elements;
-    if (email.value === '' || message.value === '') {
-    alert('«Fill please all fields»');
-}
-    localStorage.removeItem('feedback - form - state');
-    form.reset();
-    formData[key] = '';
-}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <title>Page 3</title>
+    </head>
+<body>
+    <div class="gallery-link">
+        <a href="./index.html" class="nav-link nav-gallery">Main</a>
+        <a href="./1-gallery.html" class="nav-link nav-gallery">Gallery</a>
+    </div>
+    <section class="form">
+    <form class="feedback-form" autocomplete="off">
+        <label>Email<input type="email" name="email" autofocus />
+        </label>
+        <label>Message<textarea name="message" rows="8"></textarea>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+    </section>
+    <script type="module" src="./js/2-form.js"></script>
+</body>
+</html>
