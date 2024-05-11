@@ -1,16 +1,19 @@
+"use strict";
+
 const formData = { email: '', message: '' };
 
 const form = document.querySelector('.feedback-form');
 form.addEventListener('input', handleInput);
 form.addEventListener('submit', sendData);
-returnInput();
+populateText();
 
 function handleInput(event) {
     const key = event.target.name;
     formData[key] = event.target.value;
     localStorage.setItem('feedback - form - state', JSON.stringify(formData));
 }
-function returnInput() {
+
+function populateText() {
     const data = JSON.parse(localStorage.getItem('feedback - form - state'));
     if (!data) {
     return;
