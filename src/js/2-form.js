@@ -28,8 +28,13 @@ function sendData(event) {
     const { email, message } = form.elements;
     if (email.value === '' || message.value === '') {
     alert('«Fill please all fields»');
+    return;
 }
+
+console.log(formData);
+
     localStorage.removeItem('feedback - form - state');
     form.reset();
-    formData[key] = '';
+    formData.email = '';
+    formData.message = '';
 }
