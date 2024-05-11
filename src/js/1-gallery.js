@@ -65,7 +65,9 @@ const images = [
   },
 ];
 
-
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+const imgBox = document.querySelector('.gallery');
 
 imgBox.insertAdjacentHTML(
   'beforeend',
@@ -92,6 +94,3 @@ let gallery = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-const imgBox = document.querySelector('.gallery');
