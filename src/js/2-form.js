@@ -14,7 +14,7 @@ function handleInput(event) {
 }
 
 function populateText() {
-    const data = JSON.parse(localStorage.getItem('feedback - form - state'));
+    const data = JSON.parse(localStorage.getItem('feedback-form-state'));
     if (!data) {
     return;
 }
